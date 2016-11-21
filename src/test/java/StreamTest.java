@@ -115,9 +115,9 @@ public class StreamTest {
     @Test
     public void MostProfitableCubeDetail() throws RemoteException {
         Calendar calendar = Calendar.getInstance();
-        calendar.set(2015, Calendar.OCTOBER, 20);
+        calendar.set(2016, Calendar.OCTOBER, 20);
         Date from = calendar.getTime();
-        calendar.set(2015, Calendar.NOVEMBER, 25);
+        calendar.set(2016, Calendar.NOVEMBER, 10);
         Date to = calendar.getTime();
         MostProfitableCubeCollector cubeCollector = new MostProfitableCubeCollector( MostProfitableCubeCollector.Market.CN,
                 MostProfitableCubeCollector.ORDER_BY.DAILY);
