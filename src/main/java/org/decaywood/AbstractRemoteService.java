@@ -75,7 +75,7 @@ public abstract class AbstractRemoteService extends UnicastRemoteObject {
         String slaveIP = entry.getKey();
         int port = entry.getValue();
 
-        System.out.println(getInvokeURL(slaveIP, port));
+        System.out.println("url=====" + getInvokeURL(slaveIP, port));
         return Naming.lookup(getInvokeURL(slaveIP, port));
     }
 

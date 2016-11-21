@@ -14,6 +14,7 @@
         <jackson-version>2.6.3</jackson-version>
         <junit-version>4.12</junit-version>
         <jdbc-driver>5.1.37</jdbc-driver>
+        <spark-version>2.0.2</spark-version>
     </properties>
 
     <build>
@@ -28,10 +29,29 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <version>3.1.6</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>add-source</goal>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 
     <dependencies>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.10</artifactId>
+            <version>${spark-version}</version>
+        </dependency>
 
         <dependency>
             <groupId>mysql</groupId>

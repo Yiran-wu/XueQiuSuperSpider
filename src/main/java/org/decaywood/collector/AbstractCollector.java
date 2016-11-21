@@ -43,7 +43,9 @@ public abstract class AbstractCollector<T> extends AbstractRemoteService impleme
      * @param webSite 站点（默认为雪球网首页，可拓展其他财经网站--作用为获取cookie）
      */
     public AbstractCollector(TimeWaitingStrategy strategy, String webSite) throws RemoteException {
+
         super(strategy, webSite);
+        System.out.print("===============this====" + webSite + "=======\n");
     }
 
 
@@ -61,9 +63,12 @@ public abstract class AbstractCollector<T> extends AbstractRemoteService impleme
             boolean needRMI = true;
 
             if (!RMIOnly) {
+
                 while (retryTime > loopTime) {
                     try {
+                        System.out.println("loop=====1==========" + retryTime);
                         res = collectLogic();
+                        System.out.print("========" + res);
                         needRMI = false;
                         break;
                     } catch (Exception e) {
@@ -76,7 +81,9 @@ public abstract class AbstractCollector<T> extends AbstractRemoteService impleme
             }
 
             if (needRMI && rmiMaster) {
+                System.out.println("=====2==========");
                 RemoteCollector proxy = (RemoteCollector) getRMIProxy();
+                System.out.println("=====1==========");
                 //noinspection unchecked
                 res = (T) proxy.get();
             } else if(rmiMaster) throw new TimeoutException("Request Time Out, You've been Possibly Banned");

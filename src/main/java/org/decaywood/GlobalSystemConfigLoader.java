@@ -39,6 +39,7 @@ public abstract class GlobalSystemConfigLoader {
                 String address = kv[0].trim();
                 Integer port = Integer.parseInt(kv[1].trim());
                 addresses.add(new Entry<>(address, port));
+                System.out.println("address:" + address + ", port:" + port);
                 return true;
             } else return false;
         });
@@ -85,6 +86,7 @@ public abstract class GlobalSystemConfigLoader {
                     String key = kv[0];
                     String value = kv[1];
                     System.setProperty(key.trim(), value.trim());
+                    System.out.println("==key==" + key + ", value=" + value);
                 }
             }
         } catch (IOException e) {

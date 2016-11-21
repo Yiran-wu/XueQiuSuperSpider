@@ -204,9 +204,9 @@ public class StreamTest {
     @Test
     public void LongHuBangTracking() throws RemoteException {
         Calendar calendar = Calendar.getInstance();
-        calendar.set(2015, Calendar.DECEMBER, 1);
+        calendar.set(2016, Calendar.DECEMBER, 1);
         Date from = calendar.getTime();
-        calendar.set(2015, Calendar.DECEMBER, 7);
+        calendar.set(2016, Calendar.DECEMBER, 7);
         Date to = calendar.getTime();
         DateRangeCollector collector = new DateRangeCollector(from, to);
         DateToLongHuBangStockMapper mapper = new DateToLongHuBangStockMapper();
