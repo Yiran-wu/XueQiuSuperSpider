@@ -52,6 +52,11 @@
             <artifactId>spark-core_2.10</artifactId>
             <version>${spark-version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-mllib_2.10</artifactId>
+            <version>${spark-version}</version>
+        </dependency>
 
         <dependency>
             <groupId>mysql</groupId>
